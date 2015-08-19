@@ -1,0 +1,49 @@
+doctype html
+html(lang='zh-CN')
+  head
+    title #{title}
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    style(type='text/css') body {padding-top: 60px; padding-bottom:40px;}
+    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.css')
+   //- link(rel='stylesheet', href='/stylesheets/login.css')
+  body
+   nav.navbar.navbar-inverse.navbar-fixed-top
+    div.container
+     div.navbar-header
+      button.navbar-toggle.collapsed(data-toggle='collapse',data-target='#navbar',aria-expanded='false',aria-controls='navbar')
+       span.sr-only Toggle navigation
+       span.icon-bar
+       span.icon-bar
+       span.icon-bar
+      a.navbar-brand(href='/') 微博
+     div#navbar.navbar-collapse.collapse(aria-expanded='false',style='height:1px;')
+      ul.nav.navbar-nav
+       li.active
+        a(href='/') 首页
+       if !user
+        li
+         a(href='/login') 登入
+        li
+         a(href='/reg') 注册
+       else
+        li
+         a(href='/logout') 登出
+  
+  div#container.container
+   if success
+    div.alert.alert-success #{success}
+    block content
+   else if error
+    div.alert.alert-danger #{error}
+    block content
+   else 
+    block content
+
+   hr
+   footer
+    p
+     <a href='mailto://hyp97272447@163.com' target='_blank'>联系作者 Marvin</a>  2015
+ script(src='/javascripts/jquery.js')
+ script(src='/javascripts/bootstrap.js')
+ //-script(src='/javascripts/login.js')
+

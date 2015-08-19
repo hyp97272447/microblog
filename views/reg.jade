@@ -1,0 +1,22 @@
+extends ./layout.jade
+block content
+ form.form-horizontal(method='post')
+  fieldset
+   legend 用户注册
+   div.form-group
+    label.col-sm-2.control-label(for='username') 用户名
+    div.col-sm-5
+     input.form-control#username(type='text',name='username')
+     p.help-block 你的账户名称，用于登录和显示
+   div.form-group
+    label.col-sm-2.control-label(for='password') 口令
+    div.col-sm-5
+     input.form-control#password(type='password',name='password')
+   div.form-group
+    label.col-sm-2.control-label(for='password-repeat') 重复输入口令
+    div.col-sm-5
+     input.form-control#password-repeat(type='password',name='password-repeat')
+   div.form-group
+    div.col-sm-offset-2.col-sm-10
+     button.btn.btn-primary(type='submit') 注册
+

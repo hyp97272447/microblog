@@ -1,0 +1,16 @@
+extends ./layout.jade
+block content
+ form.form-horizontal(method='post')
+  fieldset
+   legend 用户注册
+   div.form-group
+    label.col-sm-2.control-label(for='username') 用户名
+    div.col-sm-5
+     input.form-control#username(type='text',name='username')
+   div.form-group
+    label.col-sm-2.control-label(for='password') 口令
+    div.col-sm-5
+     input.form-control#password(type='password',name='password')
+   div.form-group
+    div.col-sm-offset-2.col-sm-10
+     button.btn.btn-primary(type='submit') 登录
